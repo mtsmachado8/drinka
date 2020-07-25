@@ -9,15 +9,15 @@ First commit:
 
 
 # TODO List (MVP)
-[x] - A simple card with title, description, tips and tricks
-[x] - A simple animation to take another card
-[x] - A default deck with at least 10 cards
-[] - Deploy to Google Play
-[] - Deploy to Apple Store
-[] - Publicity
+[x] - A simple card with title, description, tips and tricks  
+[x] - A simple animation to take another card  
+[x] - A default deck with at least 10 cards  
+[] - Deploy to Google Play  
+[] - Deploy to Apple Store  
+[] - Publicity  
 
 # Next Steps
-[] - Improve UX/UI
-[] - i18n
-[] - Chose your own deck cards
-[] - Custom Card
+[] - Improve UX/UI  
+[] - i18n  
+[] - Chose your own deck cards  
+[] - Custom Card  
