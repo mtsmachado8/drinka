@@ -1,0 +1,12 @@
+{
+  "name": "drinka2",
+  "displayName": "drinka2",
+  "expo": {
+    "name": "drinka2",
+    "slug": "drinka2",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
