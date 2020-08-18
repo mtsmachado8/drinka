@@ -12,12 +12,13 @@ The future available publicity will target evolving the game.
 [x] - A simple card with title, description, tips and tricks  
 [x] - A simple animation to take another card  
 [x] - A default deck with at least 10 cards  
+[] - Improve UX/UI 
 [] - Deploy to Google Play  
 [] - Deploy to Apple Store  
-[] - Publicity  
+
 
 # Next Steps
-[] - Improve UX/UI  
+[] - Publicity  
 [] - i18n  
 [] - Chose your own deck cards  
 [] - Custom Card  
