@@ -9,7 +9,6 @@ const Deck = () => {
   const [nextCard, setNextCard] = useState(deck[Math.floor(Math.random() * deck.length)])
   
   const takeNewCard = () => {
-    this.card.flip()
     setTimeout(() => {
       setCurrentCard(nextCard)
       setNextCard(deck[Math.floor(Math.random() * deck.length)])
@@ -21,7 +20,7 @@ const Deck = () => {
       <View style={styles.backCard3}/>
       <View style={styles.backCard2}/>
       <Card type='BACK_CARD'/>
-      <CardFlip style={styles.card} ref={card => (this.card = card)}>
+      <CardFlip style={styles.card}>
         <Card {...currentCard} onClick={takeNewCard}/>
         <Card {...nextCard} onClick={takeNewCard}/>
       </CardFlip>
