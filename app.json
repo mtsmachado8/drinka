@@ -1,12 +1,46 @@
 {
-  "name": "drinka2",
-  "displayName": "drinka2",
+  "name": "Drinka",
+  "displayName": "Drinka",
   "expo": {
-    "name": "drinka2",
-    "slug": "drinka2",
+    "name": "Drinka",
+    "slug": "Drinka",
     "version": "1.0.0",
+    "icon": "./assets/icon.png",
+    "ios": {
+      "bundleIdentifier": "com.mtsmachado8.drinka",
+      "supportsTablet": true
+    },
+    "android": {
+      "package": "com.mtsmachado8.drinka",
+      "permissions": [
+        ""
+      ]
+    },
     "assetBundlePatterns": [
       "**/*"
-    ]
+    ],
+    "splash": {
+      "image": "./assets/splash.png",
+      "backgroundColor": "#5477ED",
+      "resizeMode": "contain"
+    },
+    "packagerOpts": {
+      "config": "metro.config.js",
+      "sourceExts": [
+        "expo.ts",
+        "expo.tsx",
+        "expo.js",
+        "expo.jsx",
+        "ts",
+        "tsx",
+        "js",
+        "jsx",
+        "json",
+        "wasm",
+        "svg"
+      ]
+    },
+    "description": "Um drinking game para jogar com a galera!  \nPegue cartas, crie Regras e grite Beba!  \n\nA única regra aqui é a diversão (Por enquanto !?!?). \nJogo Ideal:  \n - Pelo menos 3 amigos. \n - Alguns copos de shots (cerveja/tequila/vodka/ o que tiver disponível). ",
+    "githubUrl": "https://github.com/mtsmachado8/drinka"
   }
 }

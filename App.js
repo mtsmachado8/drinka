@@ -1,21 +1,46 @@
-import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React, { useState } from 'react';
+import {
+  TouchableOpacity,
+  StyleSheet,
+  View,
+  Text,
+  SafeAreaView,
+  ImageBackground
+} from 'react-native';
+import deck from './src/deck'
+import { useFonts, Roboto_400Regular, Roboto_500Medium } from '@expo-google-fonts/roboto'
+import { AppLoading } from 'expo'
+import Deck from './src/components/Deck';
 
-export default function App() {
+const App = () => {
+  let [fontsLoaded] = useFonts({
+    'Roboto': Roboto_400Regular,
+    'RobotoMedium': Roboto_500Medium,
+  });
+
+  if (!fontsLoaded) {
+    return (
+      <AppLoading/>
+    )
+  }
+
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
-}
+    <ImageBackground source={require('./assets/table.png')} style={styles.table}>
+      <SafeAreaView justifyContent='center' alignItems='center' flex={1} style={styles.safeView}>
+        <Deck/>
+      </SafeAreaView>
+    </ImageBackground>
+  );                                                    
+};
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+  table: {
+    width: '100%',
+    height: '100%',
   },
-});
+  safeView: {
+    paddingTop: Platform.OS === 'android' ? 25 : 0
+  },
+})
+
+export default App;
