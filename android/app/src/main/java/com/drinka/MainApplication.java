@@ -1,4 +1,4 @@
-package com.Drinka;
+package com.drinka;
 
 import android.app.Application;
 import android.content.Context;

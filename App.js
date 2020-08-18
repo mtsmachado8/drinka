@@ -1,13 +1,9 @@
-import React, { useState } from 'react';
+import React from 'react';
 import {
-  TouchableOpacity,
   StyleSheet,
-  View,
-  Text,
   SafeAreaView,
   ImageBackground
 } from 'react-native';
-import deck from './src/deck'
 import { useFonts, Roboto_400Regular, Roboto_500Medium } from '@expo-google-fonts/roboto'
 import { AppLoading } from 'expo'
 import Deck from './src/components/Deck';
