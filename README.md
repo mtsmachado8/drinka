@@ -5,7 +5,7 @@ Anyone interested in the game can contribute with PR's, suggest new features and
 The future available publicity will target evolving the game.
 
 # The Game
-![Drinka](https://user-images.githubusercontent.com/11022437/88465999-43733600-ce9e-11ea-908f-fa25b87348bf.gif)
+![Drinka](https://user-images.githubusercontent.com/11022437/90580034-3c3e0000-e19e-11ea-95b8-c923060358ef.gif)
 
 
 # TODO List (MVP)
