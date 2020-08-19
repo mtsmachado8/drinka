@@ -1,22 +1,23 @@
 import React from 'react'
-import { View, TouchableOpacity, StyleSheet, Text } from 'react-native'
+import { View, StyleSheet, TouchableOpacity, Text } from 'react-native'
 import FlippedCardIcon from '../../assets/flippedCardIcon.svg'
 import Dash from 'react-native-dash'
 import Lamp from '../../assets/lamp.svg'
-import CardFlip from 'react-native-card-flip';
+
+const opacityOnTouch = 0
 
 const Card = ({ title, description, tip, trick, type, onClick }) => (
   <>
     {type === 'FLIPPED' ? (
-      <TouchableOpacity style={styles(type).flippedCard} onPress={onClick}>
+      <TouchableOpacity activeOpacity={opacityOnTouch} style={styles(type).flippedCard} onPress={onClick}>
         <FlippedCardIcon height='145%' width='145%'/>
       </TouchableOpacity>
     ) : type === 'BACK_CARD' ? (
-      <TouchableOpacity style={styles(type).backCard} onPress={onClick}>
+      <TouchableOpacity activeOpacity={opacityOnTouch} style={styles(type).backCard} onPress={onClick}>
         <FlippedCardIcon height='145%' width='145%'/>
       </TouchableOpacity>
     ) : (
-      <TouchableOpacity style={styles(type).card} onPress={onClick}>
+      <TouchableOpacity activeOpacity={opacityOnTouch} style={styles(type).card} onPress={onClick}>
         <View style={styles(type).cardContent}>
           <View style={styles(type).titleView}>
             <Text style={styles(type).title}>{title}</Text>

@@ -4,19 +4,18 @@ import PropTypes from "prop-types";
 import { Platform, StyleSheet, Animated } from "react-native";
 
 const CardFlip = ({
-  duration = 5000,
-  flipZoom = 0.09,
+  duration = 600,
+  flipZoom = 0.2,
   perspective = 800,
   style = {},
   children,
-  getNextCard,
-  onFlip,
-  onFlipStart,
-  onFlipEnd
+  getNextCard = () => {},
+  getFlippedCard = () => {},
+  onFlipStart = () => {},
+  onFlipEnd = () => {}
 }) => {
 
   const [state, setState] = useState({
-    side: 0,
     sides: children,
     rotateOrientation: "y",
     progress: new Animated.Value(0),
@@ -24,26 +23,32 @@ const CardFlip = ({
     zoom: new Animated.Value(0),
   })
 
-  const flip = () => {
-    const { side } = state;
-    _flipTo({
-      x: 50,
-      y: side === 0 ? 100 : 50
-    });
+  const setInitialState = () => {
+    const { sides } = state
+    const newSides = [getFlippedCard(), sides[1]]
+    
     setState({
       ...state,
-      side: side === 0 ? 1 : 0,
+      sides: newSides
+    })
+  }
+
+  const flip = () => {
+    setInitialState()
+
+    _flipTo({
+      x: 50,
+      y: 100
     });
   }
 
   const _flipTo = (toValue) => {
-    const { rotation, progress, zoom, side } = state;
-    onFlip(side === 0 ? 1 : 0);
-    onFlipStart(side === 0 ? 1 : 0);
+    const { rotation, progress, zoom } = state;
+    onFlipStart();
     Animated.parallel([
       // Inverts text
       Animated.timing(progress, {
-        toValue: side === 0 ? 100 : 0,
+        toValue: 100,
         duration,
         useNativeDriver: true
       }),
@@ -65,13 +70,23 @@ const CardFlip = ({
         useNativeDriver: true
       })
     ]).start(() => {
-      onFlipEnd(side === 0 ? 1 : 0);
+      onFlipEnd();
+      const { sides } = state
+      const newSides = [sides[1], getNextCard()]
+      
+      setState({
+        ...state,
+        sides: newSides,
+        progress: new Animated.Value(0),
+        rotation: new Animated.ValueXY({ x: 50, y: 50 }),
+        zoom: new Animated.Value(0)
+      });
     });
   }
 
   const getCardATransformation = () => {
     //0, 50, 100
-    const { progress, rotation, side } = state;
+    const { progress, rotation } = state;
 
     const sideAOpacity = progress.interpolate({
       inputRange: [50, 51],
@@ -81,7 +96,7 @@ const CardFlip = ({
 
     const sideATransform = {
       opacity: sideAOpacity,
-      zIndex: side === 0 ? 1 : 0,
+      zIndex: 1,
       transform: [{ perspective }]
     };
   
@@ -97,7 +112,7 @@ const CardFlip = ({
   }
 
   const getCardBTransformation = () => {
-    const { progress, rotation, side } = state;
+    const { progress, rotation } = state;
 
     const sideBOpacity = progress.interpolate({
       inputRange: [50, 51],
@@ -107,7 +122,7 @@ const CardFlip = ({
 
     const sideBTransform = {
       opacity: sideBOpacity,
-      zIndex: side === 0 ? 0 : 1,
+      zIndex: 0,
       transform: [{ perspective: -1 * perspective }]
     };
     let bYRotation;
@@ -171,16 +186,6 @@ const styles = StyleSheet.create({
     top: 0
   }
 });
-
-CardFlip.defaultProps = {
-  style: {},
-  duration: 500,
-  flipZoom: 0.09,
-  perspective: 800,
-  onFlip: () => { },
-  onFlipStart: () => { },
-  onFlipEnd: () => { }
-};
 
 CardFlip.propTypes = {
   style: PropTypes.oneOfType([

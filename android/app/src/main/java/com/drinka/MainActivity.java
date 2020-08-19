@@ -1,4 +1,4 @@
-package com.Drinka;
+package com.drinka;
 
 import android.os.Bundle;
 

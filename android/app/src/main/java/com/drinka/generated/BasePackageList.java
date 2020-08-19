@@ -1,4 +1,4 @@
-package com.Drinka.generated;
+package com.drinka.generated;
 
 import java.util.Arrays;
 import java.util.List;
