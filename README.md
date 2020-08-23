@@ -19,9 +19,17 @@ The future available publicity will target evolving the game.
 [x] - Deploy to Google Play  
 [] - Deploy to Apple Store  
 
+# Post MVP
+[] - i18n
+
 
 # Next Steps
-[] - i18n  
-[] - Chose your own deck cards  
-[] - Custom Card  
-[] - Publicity  
+[] - Chose your own deck of cards [Free Feature]
+    - Maximum 100 cards and choose how many of each card
+[] - Custom Card [Paid Feature]
+    - Write your own Card Title, Description and Action
+[] - Publicity on app 
+    - A random publicity appearing on the bottom of the app or instead of the card (somthing like youtube/tinder do))
+[] - Remove Publicity for life [Paid Feature]
+[] - Advertising on social medias
+    - Some banners with a phrase like: Now that the pandemic is over, find your friends, have fun and try the Drinka game! ' Available for Android and Ios'
