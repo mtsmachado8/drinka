@@ -4,7 +4,7 @@ I intend to let it be a public repository for life.
 Anyone interested in the game can contribute with PR's, suggest new features and so on...  
 The future available publicity will target evolving the game.
 
-<a href="https://play.google.com/store/apps/details?id=com.mtsmachado8.drinka">
+<a target="_blank" href="https://play.google.com/store/apps/details?id=com.mtsmachado8.drinka">
   <img src="https://cdn.rawgit.com/steverichey/google-play-badge-svg/master/img/pt-br_get.svg" width="20%">
 </a>
 
