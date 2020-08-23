@@ -5,7 +5,7 @@ Anyone interested in the game can contribute with PR's, suggest new features and
 The future available publicity will target evolving the game.
 
 <div>
-  <img src="https://cdn.rawgit.com/steverichey/google-play-badge-svg/master/img/pt-br_get.svg" width="50%">
+  <img src="https://cdn.rawgit.com/steverichey/google-play-badge-svg/master/img/pt-br_get.svg" width="20%">
 </div>
 
 # The Game
